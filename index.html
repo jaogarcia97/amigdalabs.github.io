@@ -1,106 +1,144 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Amigda Labs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #ffffff;
-      color: #333333;
-    }
-    header {
+      font-family: 'Inter', 'Helvetica Neue', sans-serif;
       background-color: #0d1117;
       color: #ffffff;
-      padding: 60px 20px;
+    }
+    .navbar {
+      background-color: #000000;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .navbar .branding {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .navbar h1 {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-weight: 700;
+      font-size: 3rem;
+      margin: 0;
+      color: #ffffff;
+    }
+    .navbar img {
+      height: 50px;
+    }
+    .hero {
+      background-color: #111827;
+      padding: 80px 20px;
       text-align: center;
     }
-    header img {
-      max-width: 150px;
-      margin-bottom: 20px;
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #ffffff;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
+    .hero p {
+      font-size: 1.2rem;
+      color: #d1d5db;
     }
-    header p {
-      margin-top: 10px;
-      font-size: 1.2em;
-      color: #c9d1d9;
-    }
-    section {
+    .section {
       padding: 60px 20px;
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 0 auto;
     }
     .services {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around;
-      gap: 40px;
+      gap: 30px;
+      justify-content: space-between;
     }
-    .service {
-      flex: 1 1 300px;
-      background-color: #f6f8fa;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    .card {
+      flex: 1 1 30%;
+      background: #1f2937;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease-in-out;
     }
-    .service h3 {
+    .card:hover {
+      transform: translateY(-4px);
+    }
+    .card h3 {
       margin-top: 0;
+      color: #ffffff;
+    }
+    .card p {
+      color: #d1d5db;
     }
     footer {
-      background-color: #0d1117;
-      color: #c9d1d9;
+      background-color: #000000;
+      color: #9ca3af;
       text-align: center;
-      padding: 20px;
+      padding: 30px 20px;
+      font-size: 0.9rem;
     }
     a {
-      color: #58a6ff;
+      color: #60a5fa;
       text-decoration: none;
     }
     a:hover {
       text-decoration: underline;
     }
+    @media (max-width: 768px) {
+      .services {
+        flex-direction: column;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <header>
-    <div style="display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap;">
-      <img src="AmigdaLogo.png" alt="Amigda Labs Logo" style="max-height: 80px;" />
-      <h1 style="font-family: 'Helvetica Neue', sans-serif; font-weight: 700; margin: 0;">Amigda Labs</h1>
+  <div class="navbar">
+    <div class="branding">
+      <h1>Amigda Labs</h1>
+      <img src="AmigdaLogo.png" alt="Amigda Labs Logo" />
     </div>
-    <p>Innovating AI Solutions for Modern Challenges</p>
-  </header>
+  </div>
 
-  <section>
-    <h2>Our Services</h2>
+  <section class="hero">
+    <h2>AI Solutions. Human-Centric Impact.</h2>
+    <p>Empowering businesses with intelligent automation and seamless customer experiences.</p>
+  </section>
+
+  <section class="section">
+    <h2>What We Offer</h2>
     <div class="services">
-      <div class="service">
+      <div class="card">
         <h3>AI Chatbots</h3>
-        <p>Enhance customer engagement with intelligent, responsive chatbots tailored for your business needs.</p>
+        <p>Automated, context-aware chat experiences across Facebook Messenger and other platforms.</p>
       </div>
-      <div class="service">
-        <h3>Document Processing</h3>
-        <p>Automate data extraction from receipts and documents, streamlining your workflow efficiently.</p>
+      <div class="card">
+        <h3>GCash Receipt Verification</h3>
+        <p>OCR-powered validation tools that detect fake payment screenshots and verify transactions in real-time.</p>
       </div>
-      <div class="service">
-        <h3>Speech-to-Text Tools</h3>
-        <p>Convert speech into accurate text in real-time, facilitating better communication and record-keeping.</p>
+      <div class="card">
+        <h3>Speech Transcription</h3>
+        <p>Transcribe community meetings and barangay operations with our locally fine-tuned voice recognition tools.</p>
       </div>
     </div>
   </section>
 
-  <section>
-    <h2>Contact Us</h2>
-    <p>Have questions or need a custom solution? Reach out to us at <a href="mailto:info@amigdalabs.com">info@amigdalabs.com</a>.</p>
+  <section class="section" style="text-align:center;">
+    <h2>Get in Touch</h2>
+    <p>Email us at <a href="mailto:josejaimefelixgarcia@gmail.com">josejaimefelixgarcia@gmail.com</a> or follow us on social media.</p>
   </section>
 
   <footer>
-    <p>&copy; 2025 Amigda Information Technology Solutions</p>
+    &copy; 2025 Amigda Information Technology Solutions. All rights reserved.
   </footer>
 
 </body>
