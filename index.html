@@ -6,59 +6,102 @@
   <title>Amigda Labs</title>
   <style>
     body {
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #f9fafb;
       margin: 0;
-      padding: 0;
-      color: #111827;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #ffffff;
+      color: #333333;
     }
     header {
-      background: #111827;
-      color: white;
-      padding: 2rem;
+      background-color: #0d1117;
+      color: #ffffff;
+      padding: 60px 20px;
       text-align: center;
     }
-    .logo {
-      max-width: 120px;
-      margin-bottom: 1rem;
+    header img {
+      max-width: 150px;
+      margin-bottom: 20px;
     }
-    main {
-      max-width: 600px;
-      margin: 2rem auto;
-      padding: 1rem;
-      text-align: center;
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
     }
-    ul {
-      list-style: none;
-      padding: 0;
+    header p {
+      margin-top: 10px;
+      font-size: 1.2em;
+      color: #c9d1d9;
     }
-    li {
-      margin: 0.5rem 0;
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 40px;
+    }
+    .service {
+      flex: 1 1 300px;
+      background-color: #f6f8fa;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .service h3 {
+      margin-top: 0;
     }
     footer {
-      margin-top: 2rem;
-      font-size: 0.9rem;
-      color: #6b7280;
+      background-color: #0d1117;
+      color: #c9d1d9;
+      text-align: center;
+      padding: 20px;
+    }
+    a {
+      color: #58a6ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <img src="logo.png" alt="Amigda Labs Logo" class="logo" />
-    <h1>Amigda Labs</h1>
-    <p>AI Solutions for Modern Businesses</p>
+    <div style="display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap;">
+      <img src="AmigdaLogo.png" alt="Amigda Labs Logo" style="max-height: 80px;" />
+      <h1 style="font-family: 'Helvetica Neue', sans-serif; font-weight: 700; margin: 0;">Amigda Labs</h1>
+    </div>
+    <p>Innovating AI Solutions for Modern Challenges</p>
   </header>
-  <main>
-    <p>We help automate your workflow with:</p>
-    <ul>
-      <li>🤖 AI Chatbots for Messenger</li>
-      <li>📸 Receipt Scanning & GCash Verification</li>
-      <li>🎤 Smart Speech-to-Text Tools for Barangays</li>
-    </ul>
-    <p>📬 Contact us at <a href="mailto:info@amigdalabs.com">info@amigdalabs.com</a></p>
-  </main>
+
+  <section>
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="service">
+        <h3>AI Chatbots</h3>
+        <p>Enhance customer engagement with intelligent, responsive chatbots tailored for your business needs.</p>
+      </div>
+      <div class="service">
+        <h3>Document Processing</h3>
+        <p>Automate data extraction from receipts and documents, streamlining your workflow efficiently.</p>
+      </div>
+      <div class="service">
+        <h3>Speech-to-Text Tools</h3>
+        <p>Convert speech into accurate text in real-time, facilitating better communication and record-keeping.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contact Us</h2>
+    <p>Have questions or need a custom solution? Reach out to us at <a href="mailto:info@amigdalabs.com">info@amigdalabs.com</a>.</p>
+  </section>
+
   <footer>
     <p>&copy; 2025 Amigda Information Technology Solutions</p>
   </footer>
+
 </body>
 </html>
