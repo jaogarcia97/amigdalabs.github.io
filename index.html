@@ -22,14 +22,16 @@
       position: sticky;
       top: 0;
       z-index: 1000;
+      border-bottom: 1px solid #21262d;
     }
     .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
+      font-size: 1.6rem;
+      font-weight: 600;
       color: white;
       text-decoration: none;
       display: flex;
       align-items: center;
+      letter-spacing: 0.5px;
     }
     .logo img {
       height: 32px;
@@ -42,7 +44,7 @@
       text-align: center;
     }
     h1 {
-      font-size: 3rem;
+      font-size: 3.2rem;
       margin-bottom: 20px;
     }
     p {
@@ -58,11 +60,16 @@
       color: white;
       font-size: 1rem;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
       cursor: pointer;
       text-decoration: none;
       display: inline-block;
       margin-right: 10px;
+      vertical-align: middle;
+      transition: background-color 0.3s;
+    }
+    .cta-button:hover {
+      background-color: #249236;
     }
     .section {
       padding: 60px 40px;
@@ -76,21 +83,23 @@
     }
     .card {
       background-color: #161B22;
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-      transition: transform 0.3s ease;
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-6px);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6);
     }
     .card h2 {
       margin-top: 0;
       font-weight: 600;
+      font-size: 1.4rem;
     }
     .card p {
       font-size: 1.05rem;
-      line-height: 1.5;
+      line-height: 1.6;
       font-weight: 400;
       text-align: left;
       margin: 12px 0 0;
@@ -115,48 +124,47 @@
     .about-content p {
       text-align: justify;
     }
-  </style>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const aboutBtn = document.querySelector('a[href="#about"]');
-      if (aboutBtn) {
-        aboutBtn.addEventListener('click', function (e) {
-          e.preventDefault();
-          const target = document.querySelector('#about');
-          const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
-          const startPosition = window.pageYOffset;
-          const distance = targetPosition - startPosition;
-          const duration = 600; // 0.6 seconds
-          let start = null;
+    .about-section {
+      margin-bottom: 40px;
+    }
+    .about-section h3 {
+      font-size: 1.5rem;
+      color: white;
+      margin-bottom: 12px;
+    }
+  
+    /* Smooth scroll behavior */
+    html {
+      scroll-behavior: smooth;
+    }
 
-          function step(timestamp) {
-            if (!start) start = timestamp;
-            const progress = timestamp - start;
-            const ease = progress / duration < 1 ? progress / duration : 1;
-            window.scrollTo(0, startPosition + distance * ease);
-            if (progress < duration) {
-              window.requestAnimationFrame(step);
-            }
-          }
-          window.requestAnimationFrame(step);
-        });
+    /* Animation for about section */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
       }
-    });
-  </script>
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .about-content {
+      animation: fadeInUp 0.8s ease-out;
+    }
+</style>
 </head>
 <body>
-
   <header>
     <a href="#" class="logo">Amigda Labs <img src="AmigdaLogo.png" alt="Amigda Logo"></a>
   </header>
-
-  <div class="container">
-    <h1>Built on what works. Only smarter.</h1>
-    <p>Amigda builds AI that solves real-world problems — designed to reduce friction, smoother transactions, and less time wasted on what doesn’t move your business forward.</p>
-    <a class="cta-button" href="https://www.facebook.com/people/Amigda-Labs/61575253456073/#" target="_blank">Try the AI Replier</a>
-    <a class="cta-button" href="#about">About Amigda</a>
+  <div class="container"><h1>Built on what works. Only smarter.</h1>
+<p>Amigda builds AI that solves real-world problems — designed to reduce friction, smoother transactions, and less time wasted on what doesn't move your business forward.</p><div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 30px;">
+  <button class="cta-button" id="crash-btn">Crash Our Assistant (if you can)</button>
+  <a class="cta-button" href="#about" onclick="smoothScroll(event)">About Amigda</a>
+</div>
   </div>
-
   <div class="section grid">
     <div class="card">
       <h2>Amigda Replier</h2>
@@ -183,30 +191,79 @@
       <p>We build sleek, purpose-driven iOS apps for startups, schools, and sellers—built the Apple way.</p>
     </div>
   </div>
-
   <div class="section about-content" id="about">
     <h2 style="text-align: center; margin-bottom: 40px;">Who We Are</h2>
-    <p>
-      Amigda Labs is a technology company focused on building AI-driven solutions that solve real-world problems—particularly in messaging, automation, scheduling, and payment processing. Our tools are built for speed, simplicity, and real business impact.
-    </p>
-    <p>
-      Founded in 2024 by <strong>Engr. Jose Jaime Felix II O. Garcia</strong>, Amigda Labs blends practical engineering with state-of-the-art AI. With over 6 years of experience in software development, Engr. Garcia brings deep technical insight into every solution we ship.
-    </p>
-    <p>
-      We specialize in agent-based systems using <strong>OpenAI Agents SDK, LangGraph, CrewAI, and AutoGen</strong>, and we work with technologies like <strong>LangChain, ChromaDB, Retrieval-Augmented Generation (RAG)</strong>, and <strong>fine-tuning open-source LLMs</strong> to build scalable, problem-first tools for business.
-    </p>
-    <p>
-      At Amigda, we believe in using AI not to impress—but to improve.
+    <div class="about-section">
+      <h3>Our Mission</h3>
+      <p>Amigda's mission is not to sell bots, but to broker freedom in business. We give entrepreneurs the freedom to focus on vision, not operations. We automate the day-to-day—from inquiries to delivery—so founders can scale without burnout.</p>
+    </div>
+    <div class="about-section">
+      <h3>Our Vision</h3>
+      <p>We imagine a world where running a business feels like owning a stock: you believe in it, invest in it, and let systems do the rest. Our goal is to make business ownership as passive and scalable as possible, starting with e-commerce and expanding toward full-service automation, including warehousing.</p>
+    </div>
+    <div class="about-section">
+      <h3>What We Don't Do</h3>
+      <p>We don't do marketing. We believe marketing should remain authentic. No AI-generated ads. We empower business owners to stay creative and in control of their brand voice while we handle the rest.</p>
+    </div>
+    <div class="about-section">
+      <h3>Our History</h3>
+<p>Founded in 2024 by <strong>Engr. Jose Jaime Felix II O. Garcia</strong>, Amigda Labs blends practical engineering with state-of-the-art AI. With over 6 years of experience in software development, Engr. Garcia brings deep technical insight into every solution we ship.</p>
+<p>We specialize in building intelligent workflows that allow AI agents to handle tasks like replying to inquiries, scheduling appointments, verifying payments, and triggering delivery bookings — all with minimal human intervention. Under the hood, we use tools like <strong>OpenAI Agents SDK, LangGraph, CrewAI, and AutoGen</strong>, and technologies such as <strong>LangChain, ChromaDB, Retrieval-Augmented Generation (RAG)</strong>, and <strong>fine-tuning open-source LLMs</strong> to achieve this. We evaluate and select the most suitable large language model (LLM) for each business use case — whether that's OpenAI, Google Gemini, Anthropic Claude, DeepSeek, or others — to ensure the right balance of performance, cost, and reliability.</p>
+      <p>At Amigda, we believe in using AI not to impress—but to improve.</p>
+    </div>
+    <p style="text-align: center; font-style: italic; margin-top: 40px; color: #999;">
+      "Run less. Own more." <br>
+      "Don't let your business own you." <br>
+      "Don't trade your life for logistics."
     </p>
   </div>
-
   <footer>
     <div style="max-width: 700px; margin: 0 auto;">
-      <p><strong>Contact Us</strong></p>
+      <p><strong>Contact or Call Us</strong></p>
       <p>Email: <a href="mailto:info@amigdalabs.com">info@amigdalabs.com</a></p>
       <p>Phone: <a href="tel:+639213136878">+63 921 313 6878</a></p>
     </div>
   </footer>
+<div id="popup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #161B22; color: white; padding: 30px; border-radius: 12px; box-shadow: 0 0 30px rgba(0,0,0,0.6); max-width: 500px; z-index: 1001;">
+  <h3 style="margin-top: 0;">You're about to crash our assistant.</h3>
+  <p style="font-size: 0.95rem; line-height: 1.6; margin-top: 10px;">You'll be redirected to our actual Facebook page</p>
+  <p style="font-size: 0.95rem; line-height: 1.6; margin-top: 5px;">Go on, we'll help you crash our own Assistant 😉</p>
+  <ul style="text-align: left; font-size: 0.95rem; line-height: 1.6;">
+    <li>Be rude and piss it off</li>
+    <li>Ask so many questions and then buy nothing</li>
+    <li>Rush a delivery, then ghost the rider</li>
+    <li>Schedule an appointment and keep changing it</li>
+    <li>Don't show up for the appointment, and then ask for a refund</li>
+  </ul>
+  <p style="margin-top: 20px; font-size: 1.1rem; font-weight: 600;">Are you ready to break it?</p>
+  <div style="text-align: right; margin-top: 20px;">
+    <button onclick="redirectToFacebook()" style="margin-right: 10px; padding: 10px 20px; background-color: #2ea043; color: white; border: none; border-radius: 6px; cursor: pointer;">Yes, take me there</button>
+    <button onclick="document.getElementById('popup').style.display='none'" style="padding: 10px 20px; background-color: #444; color: white; border: none; border-radius: 6px; cursor: pointer;">Cancel</button>
+  </div>
+</div>
 
+<script>
+  document.getElementById("crash-btn").addEventListener("click", function() {
+    document.getElementById("popup").style.display = "block";
+  });
+
+  function redirectToFacebook() {
+    window.open("https://www.facebook.com/people/Amigda-Labs/61575253456073/#", "_blank");
+    document.getElementById("popup").style.display = "none";
+  }
+
+  function smoothScroll(event) {
+    event.preventDefault();
+    const aboutSection = document.getElementById('about');
+    const headerHeight = document.querySelector('header').offsetHeight;
+    const sectionPosition = aboutSection.getBoundingClientRect().top;
+    const offsetPosition = sectionPosition + window.pageYOffset - headerHeight - 20; // 20px extra padding
+    
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+  }
+</script>
 </body>
 </html>
