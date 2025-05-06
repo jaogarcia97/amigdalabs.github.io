@@ -224,11 +224,11 @@
       <p>Phone: <a href="tel:+639213136878">+63 921 313 6878</a></p>
     </div>
   </footer>
-<div id="popup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #161B22; color: white; padding: 30px; border-radius: 12px; box-shadow: 0 0 30px rgba(0,0,0,0.6); max-width: 500px; z-index: 1001;">
-  <h3 style="margin-top: 0;">You're about to crash our assistant.</h3>
+<div id="popup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #161B22; color: white; padding: 20px; border-radius: 12px; box-shadow: 0 0 30px rgba(0,0,0,0.6); width: 90%; max-width: 500px; z-index: 1001; margin: 20px; box-sizing: border-box;">
+  <h3 style="margin-top: 0; font-size: 1.3rem;">You're about to crash our assistant.</h3>
   <p style="font-size: 0.95rem; line-height: 1.6; margin-top: 10px;">You'll be redirected to our actual Facebook page</p>
   <p style="font-size: 0.95rem; line-height: 1.6; margin-top: 5px;">Go on, we'll help you crash our own Assistant 😉</p>
-  <ul style="text-align: left; font-size: 0.95rem; line-height: 1.6;">
+  <ul style="text-align: left; font-size: 0.95rem; line-height: 1.6; padding-left: 20px;">
     <li>Be rude and piss it off</li>
     <li>Ask so many questions and then buy nothing</li>
     <li>Rush a delivery, then ghost the rider</li>
@@ -236,9 +236,9 @@
     <li>Don't show up for the appointment, and then ask for a refund</li>
   </ul>
   <p style="margin-top: 20px; font-size: 1.1rem; font-weight: 600;">Are you ready to break it?</p>
-  <div style="text-align: right; margin-top: 20px;">
-    <button onclick="redirectToFacebook()" style="margin-right: 10px; padding: 10px 20px; background-color: #2ea043; color: white; border: none; border-radius: 6px; cursor: pointer;">Yes, take me there</button>
-    <button onclick="document.getElementById('popup').style.display='none'" style="padding: 10px 20px; background-color: #444; color: white; border: none; border-radius: 6px; cursor: pointer;">Cancel</button>
+  <div style="text-align: right; margin-top: 20px; display: flex; justify-content: flex-end; gap: 10px;">
+    <button onclick="redirectToFacebook()" style="padding: 10px 20px; background-color: #2ea043; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.95rem;">Yes, take me there</button>
+    <button onclick="document.getElementById('popup').style.display='none'" style="padding: 10px 20px; background-color: #444; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.95rem;">Cancel</button>
   </div>
 </div>
 
